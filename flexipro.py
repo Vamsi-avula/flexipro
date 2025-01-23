@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 load_dotenv("C:\\Users\\vamsi\\project\\key.env")
 
 # Set API Keys
-API_KEY = os.getenv("openAI_API_key")
+API_KEY = st.secrets["openai"]["api_key"]
 serpapi_key = os.getenv("serpapi_key")
 
 # Initialize LLM
