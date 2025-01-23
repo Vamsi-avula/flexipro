@@ -1,4 +1,5 @@
 # Exclude environment and secrets files
+.streamlit/
 key.env
 .env
 .streamlit/secrets.toml
