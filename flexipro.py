@@ -12,7 +12,7 @@ API_KEY = os.getenv("openAI_API_key")
 serpapi_key = os.getenv("serpapi_key")
 
 # Initialize LLM
-llm = OpenAI(temperature=0.7)
+llm = OpenAI(temperature=0.7, api_key=API_KEY)
 
 # Function to fetch data from SerpAPI
 def fetch_intellinum_data():
