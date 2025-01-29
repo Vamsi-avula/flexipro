@@ -12,24 +12,13 @@ print("dotenv imported successfully")
 
 load_dotenv()
 
-
-# Set API Keys
-API_KEY = os.getenv("openAI_API_key")
-serpapi_key = os.getenv("serpapi_key")
-if not API_KEY:
-    raise ValueError("ERROR: OpenAI API Key is missing! Please check your .env file or environment variables.")
-
-if not serpapi_key:
-    raise ValueError("ERROR: SerpAPI Key is missing! Please check your .env file or environment variables.")
-
-
 # Initialize LLM
-llm = OpenAI(temperature=0.7, api_key=API_KEY)
+llm = OpenAI(temperature=0.7)
 
 # Function to fetch data from SerpAPI
 def fetch_intellinum_data():
     try:
-        search = GoogleSearch({"q": "Intellinum company details", "api_key": serpapi_key})
+        search = GoogleSearch({"q": "Intellinum company details"})
         results = search.get_dict()
 
         # Extract relevant data from the results
