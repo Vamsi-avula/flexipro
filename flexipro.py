@@ -7,9 +7,16 @@ import os
 from dotenv import load_dotenv
 load_dotenv("C:\\Users\\vamsi\\project\\key.env")
 
+
 # Set API Keys
-API_KEY = st.secrets["openai"]["api_key"]
+API_KEY = os.getenv("openAI_API_key")
 serpapi_key = os.getenv("serpapi_key")
+if not API_KEY:
+    raise ValueError("ERROR: OpenAI API Key is missing! Please check your .env file or environment variables.")
+
+if not serpapi_key:
+    raise ValueError("ERROR: SerpAPI Key is missing! Please check your .env file or environment variables.")
+
 
 # Initialize LLM
 llm = OpenAI(temperature=0.7, api_key=API_KEY)
@@ -53,7 +60,7 @@ def generate_response(topic):
 
 # Streamlit UI
 st.title("Supply Chain Chatbot")
-query = st.text_input("Enter your query about FlexiPro or Intellinum:")
+query = st.text_input("Enter your query about FlexiPro or Intellinum or Supply chain:")
 
 if query:
     response = generate_response(query)
