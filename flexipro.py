@@ -1,7 +1,7 @@
 import streamlit as st
 from langchain.chains import LLMChain, SequentialChain
 from langchain.prompts import PromptTemplate
-from langchain_openai import OpenAI
+from langchain_openai import OpenAI,ChatOpenAI
 from dotenv import load_dotenv
 import serpapi
 import os 
@@ -13,7 +13,7 @@ print("dotenv imported successfully")
 load_dotenv()
 
 # Initialize LLM
-llm = OpenAI(temperature=0.7)
+llm = ChatOpenAI()
 
 # Function to fetch data from SerpAPI
 def fetch_intellinum_data():
