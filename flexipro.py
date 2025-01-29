@@ -18,7 +18,7 @@ llm = OpenAI(temperature=0.7)
 # Function to fetch data from SerpAPI
 def fetch_intellinum_data():
     try:
-        search = GoogleSearch({"q": "Intellinum company details"})
+        search = GoogleSearch({"q": "Intellinum company details", "api_key": serpapi_key})
         results = search.get_dict()
 
         # Extract relevant data from the results
@@ -36,6 +36,7 @@ def fetch_intellinum_data():
 def generate_response(topic):
     # Fetch data from SerpAPI
     web_data = fetch_intellinum_data()
+    print (web_data)
 
     # OpenAI Prompt
     prompt_template = PromptTemplate(

@@ -1,7 +1,8 @@
 streamlit==1.41.1
 langchain==0.3.16
 langchain_openai==0.3.2
+google-search-results
 serpapi
 python-dotenv==1.0.1
 openai==1.60.2
-google-search-results
+requests
