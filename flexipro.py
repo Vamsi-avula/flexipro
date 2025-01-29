@@ -13,7 +13,10 @@ print("dotenv imported successfully")
 load_dotenv()
 
 # Initialize LLM
-llm = ChatOpenAI()
+API_KEY = st.secrets["OPENAI_API_KEY"]
+
+# Initialize ChatOpenAI with API key
+llm = ChatOpenAI(openai_api_key=API_KEY, temperature=0.7)
 
 # Function to fetch data from SerpAPI
 def fetch_intellinum_data():
