@@ -5,6 +5,7 @@ from langchain_openai import OpenAI
 from serpapi import GoogleSearch
 import os 
 from dotenv import load_dotenv
+print(dotenv.__version__)
 
 # Test if dotenv loads correctly
 print("dotenv imported successfully")
