@@ -2,9 +2,10 @@ import streamlit as st
 from langchain.chains import LLMChain, SequentialChain
 from langchain.prompts import PromptTemplate
 from langchain_openai import OpenAI
+from dotenv import load_dotenv
 from serpapi import GoogleSearch
 import os 
-from dotenv import load_dotenv
+
 
 # Test if dotenv loads correctly
 print("dotenv imported successfully")
