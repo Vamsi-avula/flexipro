@@ -5,7 +5,11 @@ from langchain_openai import OpenAI
 from serpapi import GoogleSearch
 import os 
 from dotenv import load_dotenv
-load_dotenv("C:\\Users\\vamsi\\project\\key.env")
+
+# Test if dotenv loads correctly
+print("dotenv imported successfully")
+
+load_dotenv()
 
 
 # Set API Keys
