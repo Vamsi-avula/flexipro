@@ -3,7 +3,7 @@ from langchain.chains import LLMChain, SequentialChain
 from langchain.prompts import PromptTemplate
 from langchain_openai import OpenAI
 from dotenv import load_dotenv
-from serpapi import GoogleSearch
+import serpapi
 import os 
 
 
@@ -18,7 +18,7 @@ llm = OpenAI(temperature=0.7)
 # Function to fetch data from SerpAPI
 def fetch_intellinum_data():
     try:
-        search = GoogleSearch({"q": "Intellinum company details", "api_key": serpapi_key})
+        search = serpapi.search(q="Intellinum company details")
         results = search.get_dict()
 
         # Extract relevant data from the results
@@ -55,7 +55,7 @@ def generate_response(topic):
 
 # Streamlit UI
 st.title("Supply Chain Chatbot")
-query = st.text_input("Enter your query about FlexiPro or Intellinum or Supply chain:")
+query = st.text_input("Enter your query about Supply chain:")
 
 if query:
     response = generate_response(query)
